@@ -89,8 +89,11 @@ class ListingController extends Controller
         ->with('success', 'Listing was changed!');
     }
 
-    public function destroy(string $id)
+    public function destroy(Listing $listing)
     {
-        //
+        $listing->delete();
+
+        return redirect()->back()
+        ->with('success', 'Listing was deleted!');
     }
 }
