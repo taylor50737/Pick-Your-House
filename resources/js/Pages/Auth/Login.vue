@@ -24,4 +24,5 @@ const form = useForm({
   password: null,
 })
 const login = () => form.post(route('login.store'))
+
 </script>
