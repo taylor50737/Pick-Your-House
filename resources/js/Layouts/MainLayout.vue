@@ -12,10 +12,15 @@
         >
           <Link :href="route('listing.index')">LaraZillow</Link>
         </div>
-        <div
-          class="btn-primary"
-        >
-          <Link :href="route('listing.create')">+ New Listing</Link>
+        <div v-if="user" class="flex items-center gap-4">
+          <div class="text-sm text-gray-500">{{ user.name }}</div>
+          <Link :href="route('listing.create')" class="btn-primary">
+            + New Listing
+          </Link>
+          <div>Logout</div>
+        </div>
+        <div v-else>
+          <Link :href="route('login')">Sign-In</Link>
         </div>
       </nav>
     </div>
@@ -27,5 +32,8 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { computed } from 'vue'
+import { Link, usePage } from '@inertiajs/vue3'
+const page = usePage()
+const user = computed(() => page.props.user)
 </script>
