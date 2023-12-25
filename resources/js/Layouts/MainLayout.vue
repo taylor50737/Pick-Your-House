@@ -27,6 +27,7 @@
       </nav>
     </div>
   </header>
+  //dark
 
   <main class="container mx-auto p-4 w-full">
     <slot>Default</slot>
