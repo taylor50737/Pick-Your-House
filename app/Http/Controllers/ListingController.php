@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ListingController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Listing::class, 'listing');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -25,6 +29,7 @@ class ListingController extends Controller
      */
     public function create()
     {
+        // $this->authorize('create', Listing::class);
         return inertia('Listing/Create');
     }
 
@@ -52,6 +57,11 @@ class ListingController extends Controller
 
     public function show(Listing $listing)
     {
+        // if (Auth::user()->cannot('view', $listing)) {
+        //     abort(403);
+        // }
+        // $this->authorize('view', $listing);
+        
         return inertia(
             'Listing/Show',
             [
