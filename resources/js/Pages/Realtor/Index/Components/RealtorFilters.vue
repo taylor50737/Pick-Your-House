@@ -15,8 +15,17 @@
 </template>
 
 <script setup>
-import { useForm } from '@inertiajs/vue3'
-const filterForm = useForm({
+import { reactive, watch } from 'vue'
+import { router } from '@inertiajs/vue3'
+
+const filterForm = reactive({
   deleted: false,
 })
+
+watch(filterForm, () =>
+  router.get(route('realtor.listing.index'), filterForm, {
+    preserveState: true,
+    preserveScroll: true,
+  }),
+)
 </script>
