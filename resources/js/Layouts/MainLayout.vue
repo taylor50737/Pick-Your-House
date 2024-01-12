@@ -16,7 +16,7 @@
               user.name
             }}
           </Link>
-          <Link :href="route('listing.create')" class="btn-primary"> + New Listing </Link>
+          <Link :href="route('realtor.listing.create')" class="btn-primary"> + New Listing </Link>
           <div>
             <Link :href="route('logout')" method="delete" as="button">Logout</Link>
           </div>
