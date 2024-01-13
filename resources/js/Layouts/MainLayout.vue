@@ -55,7 +55,5 @@ import { Link, usePage } from '@inertiajs/vue3'
 const page = usePage()
 const flashSuccess = computed(() => page.props.flash.success)
 const user = computed(() => page.props.user)
-const notificationCount = computed(() =>
-  Math.min(page.props.value.user.notificationCount, 9),
-)
+const notificationCount = computed(() => Math.min(page.props.user.notificationCount, 9))
 </script>
