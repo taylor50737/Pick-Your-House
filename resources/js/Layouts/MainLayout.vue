@@ -8,7 +8,7 @@
           <Link :href="route('listing.index')">Listings</Link>
         </div>
         <div class="text-xl text-indigo-600 dark:text-indigo-300 font-bold text-center">
-          <Link :href="route('listing.index')">LaraZillow</Link>
+          <Link :href="route('listing.index')">Pick Your House</Link>
         </div>
         <div v-if="user" class="flex items-center gap-4">
           <Link
@@ -54,10 +54,10 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import { Link, usePage } from '@inertiajs/vue3'
-const page = usePage()
-const flashSuccess = computed(() => page.props.flash.success)
-const user = computed(() => page.props.user)
-const notificationCount = computed(() => Math.min(page.props.user.notificationCount, 9))
+import { computed } from "vue";
+import { Link, usePage } from "@inertiajs/vue3";
+const page = usePage();
+const flashSuccess = computed(() => page.props.flash.success);
+const user = computed(() => page.props.user);
+const notificationCount = computed(() => Math.min(page.props.user.notificationCount, 9));
 </script>
